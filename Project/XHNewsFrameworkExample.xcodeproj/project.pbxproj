@@ -19,6 +19,12 @@
 		AB86831918942CFF00765392 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86830118942CFE00765392 /* UIKit.framework */; };
 		AB86832118942CFF00765392 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB86831F18942CFF00765392 /* InfoPlist.strings */; };
 		AB86832318942CFF00765392 /* XHNewsFrameworkExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86832218942CFF00765392 /* XHNewsFrameworkExampleTests.m */; };
+		AB86832E18942D9100765392 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86832D18942D9100765392 /* XHNewsFramework.framework */; };
+		AB86833118942D9A00765392 /* XHNeteaseNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86833018942D9A00765392 /* XHNeteaseNewsViewController.m */; };
+		AB86833618942DA100765392 /* tabBar-camera-on.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833218942DA100765392 /* tabBar-camera-on.png */; };
+		AB86833718942DA100765392 /* tabBar-camera-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833318942DA100765392 /* tabBar-camera-on@2x.png */; };
+		AB86833818942DA100765392 /* tabBar-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833418942DA100765392 /* tabBar-camera.png */; };
+		AB86833918942DA100765392 /* tabBar-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833518942DA100765392 /* tabBar-camera@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,13 @@
 		AB86831E18942CFF00765392 /* XHNewsFrameworkExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XHNewsFrameworkExampleTests-Info.plist"; sourceTree = "<group>"; };
 		AB86832018942CFF00765392 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB86832218942CFF00765392 /* XHNewsFrameworkExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHNewsFrameworkExampleTests.m; sourceTree = "<group>"; };
+		AB86832D18942D9100765392 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
+		AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNeteaseNewsViewController.h; sourceTree = "<group>"; };
+		AB86833018942D9A00765392 /* XHNeteaseNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNeteaseNewsViewController.m; sourceTree = "<group>"; };
+		AB86833218942DA100765392 /* tabBar-camera-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera-on.png"; sourceTree = "<group>"; };
+		AB86833318942DA100765392 /* tabBar-camera-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera-on@2x.png"; sourceTree = "<group>"; };
+		AB86833418942DA100765392 /* tabBar-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera.png"; sourceTree = "<group>"; };
+		AB86833518942DA100765392 /* tabBar-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB86832E18942D9100765392 /* XHNewsFramework.framework in Frameworks */,
 				AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */,
 				AB86830218942CFE00765392 /* UIKit.framework in Frameworks */,
 				AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */,
@@ -107,8 +121,11 @@
 		AB86830318942CFE00765392 /* XHNewsFrameworkExample */ = {
 			isa = PBXGroup;
 			children = (
+				AB86832D18942D9100765392 /* XHNewsFramework.framework */,
 				AB86830C18942CFE00765392 /* AppDelegate.h */,
 				AB86830D18942CFE00765392 /* AppDelegate.m */,
+				AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */,
+				AB86833018942D9A00765392 /* XHNeteaseNewsViewController.m */,
 				AB86830F18942CFE00765392 /* Images.xcassets */,
 				AB86830418942CFE00765392 /* Supporting Files */,
 			);
@@ -118,6 +135,10 @@
 		AB86830418942CFE00765392 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB86833218942DA100765392 /* tabBar-camera-on.png */,
+				AB86833318942DA100765392 /* tabBar-camera-on@2x.png */,
+				AB86833418942DA100765392 /* tabBar-camera.png */,
+				AB86833518942DA100765392 /* tabBar-camera@2x.png */,
 				AB86830518942CFE00765392 /* XHNewsFrameworkExample-Info.plist */,
 				AB86830618942CFE00765392 /* InfoPlist.strings */,
 				AB86830918942CFE00765392 /* main.m */,
@@ -219,8 +240,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB86833718942DA100765392 /* tabBar-camera-on@2x.png in Resources */,
+				AB86833818942DA100765392 /* tabBar-camera.png in Resources */,
 				AB86830818942CFE00765392 /* InfoPlist.strings in Resources */,
+				AB86833918942DA100765392 /* tabBar-camera@2x.png in Resources */,
 				AB86831018942CFE00765392 /* Images.xcassets in Resources */,
+				AB86833618942DA100765392 /* tabBar-camera-on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB86833118942D9A00765392 /* XHNeteaseNewsViewController.m in Sources */,
 				AB86830E18942CFE00765392 /* AppDelegate.m in Sources */,
 				AB86830A18942CFE00765392 /* main.m in Sources */,
 			);
@@ -359,11 +385,17 @@
 		AB86832718942CFF00765392 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHNewsFrameworkExample/XHNewsFrameworkExample-Prefix.pch";
 				INFOPLIST_FILE = "XHNewsFrameworkExample/XHNewsFrameworkExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -372,11 +404,17 @@
 		AB86832818942CFF00765392 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHNewsFrameworkExample/XHNewsFrameworkExample-Prefix.pch";
 				INFOPLIST_FILE = "XHNewsFrameworkExample/XHNewsFrameworkExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,6 +481,7 @@
 				AB86832818942CFF00765392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB86832918942CFF00765392 /* Build configuration list for PBXNativeTarget "XHNewsFrameworkExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +490,7 @@
 				AB86832B18942CFF00765392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

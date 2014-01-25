@@ -13,12 +13,16 @@
 #define kXHItemScrollToolBarHeight 30
 
 @interface XHItemScrollToolBar : UIScrollView
+@property (nonatomic, strong) NSArray *itemViews;
 @property (nonatomic, strong) NSArray *items; // dataSources
 @property (nonatomic, assign) CGFloat itemWidth; // default is CGRectGetWidth([[UIScreen mainScreen] bounds]) / 5.0;
 @property (nonatomic, assign) CGFloat itemPaddingX; // default is 0
 @property (nonatomic, assign) CGFloat itemPaddingY; // default is 0
 @property (nonatomic, assign) NSInteger selectIndex; // default is 0
-@property (nonatomic, strong) UIImage *indicatorImage; // default is nil
+
+- (CGPoint)centerForSelectedItemAtIndex:(NSUInteger)index;
+- (CGPoint)contentOffsetForSelectedItemAtIndex:(NSUInteger)index;
+
 - (void)reloadData;
 
 @end

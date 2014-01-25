@@ -18,7 +18,7 @@
 	if (self = [super init]) {
         NSMutableArray *items = [NSMutableArray new];
         __weak typeof(self) weakSelf = self;
-        int numberOfPanels = 100;
+        int numberOfPanels = 15;
         for (int i = 0; i < numberOfPanels; i++) {
             XHItem *item = [[XHItem alloc] initWithNormalImage:[UIImage imageNamed:@"tabBar-camera"] selectedImage:[UIImage imageNamed:@"tabBar-camera-on"] title:nil itemSelectedBlcok:^(XHItemView *itemView) {
                 NSInteger index = itemView.item.index;

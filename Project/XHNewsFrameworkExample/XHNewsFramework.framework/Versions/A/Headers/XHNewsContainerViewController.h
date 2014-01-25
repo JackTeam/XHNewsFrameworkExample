@@ -18,6 +18,8 @@
 @property (nonatomic, assign) int lastDisplayedPage;
 @property (nonatomic, assign) BOOL isEditing; // default is NO
 
+@property (nonatomic, strong) NSArray *items;
+
 - (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
 - (XHContentView *)contentViewAtPage:(NSInteger)page;
 

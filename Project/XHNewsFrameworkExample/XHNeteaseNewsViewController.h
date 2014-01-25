@@ -9,6 +9,4 @@
 #import <XHNewsFramework/XHNewsContainerViewController.h>
 
 @interface XHNeteaseNewsViewController : XHNewsContainerViewController
-@property (nonatomic, strong) NSMutableArray *pages;
-@property (nonatomic, strong) NSMutableArray *items;
 @end

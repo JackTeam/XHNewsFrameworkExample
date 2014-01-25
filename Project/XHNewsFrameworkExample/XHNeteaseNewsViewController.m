@@ -7,47 +7,35 @@
 //
 
 #import "XHNeteaseNewsViewController.h"
-#import <XHNewsFramework/XHItemScrollToolBar.h>
-#import <XHNewsFramework/XHFountionCommon.h>
-
+#import <XHNewsFramework/XHItemView.h>
 
 @interface XHNeteaseNewsViewController ()
-@property (nonatomic, strong) XHItemScrollToolBar *itemScrollToolBar;
 @end
 
 @implementation XHNeteaseNewsViewController
 
-- (XHItemScrollToolBar *)itemScrollToolBar {
-    if (!_itemScrollToolBar) {
-        _itemScrollToolBar = [[XHItemScrollToolBar alloc] initWithFrame:CGRectMake(0, [XHFountionCommon getAdapterHeight], CGRectGetWidth(self.view.bounds), kXHItemScrollToolBarHeight)];
-        _itemScrollToolBar.items = self.items;
-        [self.view addSubview:_itemScrollToolBar];
-    }
-    return _itemScrollToolBar;
-}
-
 - (id)init {
 	if (self = [super init]) {
-        self.contentViewContentInsetTop = kXHItemScrollToolBarHeight;
-		_pages = [NSMutableArray new];
-        _items = [NSMutableArray new];
+        NSMutableArray *items = [NSMutableArray new];
         __weak typeof(self) weakSelf = self;
-		int numberOfPanels = 10;
-		for (int i = 0; i < numberOfPanels; i++) {
-			NSMutableArray *rows = [NSMutableArray array];
-			int numberOfRows = arc4random() % 100;
-			for (int j=0; j < numberOfRows; j++) {
-				[rows addObject:@""];
-			}
-			[self.pages addObject:rows];
-            
+        int numberOfPanels = 100;
+        for (int i = 0; i < numberOfPanels; i++) {
             XHItem *item = [[XHItem alloc] initWithNormalImage:[UIImage imageNamed:@"tabBar-camera"] selectedImage:[UIImage imageNamed:@"tabBar-camera-on"] title:nil itemSelectedBlcok:^(XHItemView *itemView) {
                 NSInteger index = itemView.item.index;
                 NSLog(@"index : %d", index);
                 [weakSelf goToContentView:index];
             }];
-            [self.items addObject:item];
-		}
+            
+            NSMutableArray *rows = [NSMutableArray array];
+            int numberOfRows = 100;
+            for (int j = 0; j < numberOfRows; j++) {
+                [rows addObject:@""];
+            }
+            item.dataSources = rows;
+            
+            [items addObject:item];
+        }
+        self.items = items;
     }
 	return self;
 }
@@ -62,7 +50,6 @@
 	// Do any additional setup after loading the view.
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
         [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.itemScrollToolBar reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,18 +61,15 @@
 #pragma mark contentViews delegate/datasource
 
 - (NSInteger)numberOfContentViews {
-	int numberOfPanels = [self.pages count];
+	int numberOfPanels = [self.items count];
 	[self setTitle:[NSString stringWithFormat:@"%i contentView(s)", numberOfPanels]];
 	
 	return numberOfPanels;
 }
 
 - (NSInteger)contentView:(XHContentView *)contentView numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
-	return [[self.pages objectAtIndex:page] count];
-}
-
-- (NSString *)contentView:(XHContentView *)contentView titleForHeaderInPage:(NSInteger)pageNumber section:(NSInteger)section {
-    return [NSString stringWithFormat:@"Page %i Section %i", pageNumber, section];
+    XHItem *item = [self.items objectAtIndex:page];
+	return [item.dataSources count];
 }
 
 - (UITableViewCell *)contentView:(XHContentView *)contentView cellForRowAtIndexPath:(XHPageIndexPath *)indexPath {

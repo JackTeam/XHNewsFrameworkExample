@@ -18,6 +18,9 @@ typedef void(^XHItemSelectedBlcok)(XHItemView *itemView);
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) XHItemSelectedBlcok itemSelectedCompled;
 
+@property (nonatomic, copy) NSString *dataSourcesStringUrl;
+@property (nonatomic, strong) NSArray *dataSources;
+
 - (instancetype)initWithNormalImage:(UIImage *)normalImage selectedImage:(UIImage *)selectedImage title:(NSString *)title itemSelectedBlcok:(XHItemSelectedBlcok)itemSelectedCompled;
 
 @end

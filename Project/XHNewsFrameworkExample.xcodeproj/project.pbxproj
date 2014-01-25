@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB846C7C1894693A00F5345A /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB846C7B1894693A00F5345A /* XHNewsFramework.framework */; };
 		AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8682FD18942CFE00765392 /* Foundation.framework */; };
 		AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8682FF18942CFE00765392 /* CoreGraphics.framework */; };
 		AB86830218942CFE00765392 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86830118942CFE00765392 /* UIKit.framework */; };
@@ -19,7 +20,6 @@
 		AB86831918942CFF00765392 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86830118942CFE00765392 /* UIKit.framework */; };
 		AB86832118942CFF00765392 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB86831F18942CFF00765392 /* InfoPlist.strings */; };
 		AB86832318942CFF00765392 /* XHNewsFrameworkExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86832218942CFF00765392 /* XHNewsFrameworkExampleTests.m */; };
-		AB86832E18942D9100765392 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86832D18942D9100765392 /* XHNewsFramework.framework */; };
 		AB86833118942D9A00765392 /* XHNeteaseNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB86833018942D9A00765392 /* XHNeteaseNewsViewController.m */; };
 		AB86833618942DA100765392 /* tabBar-camera-on.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833218942DA100765392 /* tabBar-camera-on.png */; };
 		AB86833718942DA100765392 /* tabBar-camera-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833318942DA100765392 /* tabBar-camera-on@2x.png */; };
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB846C7B1894693A00F5345A /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB8682FA18942CFE00765392 /* XHNewsFrameworkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHNewsFrameworkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8682FD18942CFE00765392 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB8682FF18942CFE00765392 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +55,6 @@
 		AB86831E18942CFF00765392 /* XHNewsFrameworkExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XHNewsFrameworkExampleTests-Info.plist"; sourceTree = "<group>"; };
 		AB86832018942CFF00765392 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB86832218942CFF00765392 /* XHNewsFrameworkExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHNewsFrameworkExampleTests.m; sourceTree = "<group>"; };
-		AB86832D18942D9100765392 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNeteaseNewsViewController.h; sourceTree = "<group>"; };
 		AB86833018942D9A00765392 /* XHNeteaseNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNeteaseNewsViewController.m; sourceTree = "<group>"; };
 		AB86833218942DA100765392 /* tabBar-camera-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera-on.png"; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB86832E18942D9100765392 /* XHNewsFramework.framework in Frameworks */,
+				AB846C7C1894693A00F5345A /* XHNewsFramework.framework in Frameworks */,
 				AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */,
 				AB86830218942CFE00765392 /* UIKit.framework in Frameworks */,
 				AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */,
@@ -121,7 +121,7 @@
 		AB86830318942CFE00765392 /* XHNewsFrameworkExample */ = {
 			isa = PBXGroup;
 			children = (
-				AB86832D18942D9100765392 /* XHNewsFramework.framework */,
+				AB846C7B1894693A00F5345A /* XHNewsFramework.framework */,
 				AB86830C18942CFE00765392 /* AppDelegate.h */,
 				AB86830D18942CFE00765392 /* AppDelegate.m */,
 				AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */,

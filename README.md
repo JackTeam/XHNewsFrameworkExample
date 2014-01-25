@@ -1,7 +1,7 @@
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkExample.gif)
 
 ## 中文：   
-XHNewsFrameworkExample是一个快速的集成和开发框架的新闻应用程序,在仿网易新闻应App的基础上完成的框架。   
+XHNewsFramework是一个快速的集成和开发框架的新闻应用程序,在仿网易新闻应App的基础上完成的框架。   
 有以下功能：             
 1、支持重用嵌套在ScrollView里面的tableView.        
 2、支持快速水平滑动scrollView.        
@@ -15,7 +15,7 @@ XHNewsFrameworkExample是一个快速的集成和开发框架的新闻应用程�
 
 
 ## English：    
-XHNewsFrameworkExample is a fast integration and development of the framework of news app, base on Netease App build.       
+XHNewsFramework is a fast integration and development of the framework of news app, base on Netease App build.       
 Has the following features:       
 1、support reuse nested inside the ScrollView tableView.       
 2、support rapid horizontal sliding scrollView.       
@@ -30,20 +30,20 @@ Subsequent will join network access, multitasking, multithreading management the
 1、这里已经是SDK模式了      
 2、只要关注该组件的用户数量达到500个以上，将以开源所有代码的模式。    
 
-请移步到开源所有代码：[XHNewsFrameworkExample](https://github.com/JackTeam/XHNewsFrameworkExample)      
+请移步到开源所有代码：[XHNewsFramework](https://github.com/JackTeam/XHNewsFramework)      
 
 ## open source model
 1, here is the SDK mode    
 2, as long as pay attention to the component of a total of more than 500 users, will with all open source code model.   
 
-Please click to all open source code: [XHNewsFrameworkExample](https://github.com/JackTeam/XHNewsFrameworkExample)     
+Please click to all open source code: [XHNewsFramework](https://github.com/JackTeam/XHNewsFramework)     
 
 
 ## License
 
-中文: XHNewsFramework 是在MIT协议下使用的，可以在LICENSE文件里面找到相关的使用协议信息.     
+中文: XHNewsFrameworkExample 是在MIT协议下使用的，可以在LICENSE文件里面找到相关的使用协议信息.     
 
-English: XHNewsFramework is acailable under the MIT license, see the LICENSE file for more information.     
+English: XHNewsFrameworkExample is acailable under the MIT license, see the LICENSE file for more information.     
 
 =======================
 ## 须知       

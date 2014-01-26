@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define BUNDLE_IMAGE(_file) [UIImage imageWithContentsOfFile:[[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"XHNewsFramework.bundle"] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png", _file,  ((int)[[UIScreen mainScreen] scale]-1) ? @"@2x" : @""]]]
+
+#ifdef __IPHONE_6_0 // iOS6 and later
+#   define UITextAlignmentCenter    NSTextAlignmentCenter
+#   define UITextAlignmentLeft      NSTextAlignmentLeft
+#   define UITextAlignmentRight     NSTextAlignmentRight
+#   define UILineBreakModeTailTruncation     NSLineBreakByTruncatingTail
+#   define UILineBreakModeMiddleTruncation   NSLineBreakByTruncatingMiddle
+#   define UILineBreakModeCharacterWrap      NSLineBreakByWordWrapping
+#endif
+
+
 @interface XHFountionCommon : NSObject
 + (CGFloat)getAdapterHeight;
++ (void)setOfflineProgress:(CGFloat)progress;
 @end

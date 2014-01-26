@@ -8,6 +8,7 @@
 
 #import "XHNeteaseNewsViewController.h"
 #import <XHNewsFramework/XHItemView.h>
+#import <XHNewsFramework/XHFountionCommon.h>
 
 @interface XHNeteaseNewsViewController ()
 @end
@@ -84,6 +85,7 @@
 
 - (void)contentView:(XHContentView *)contentView didSelectRowAtIndexPath:(XHPageIndexPath *)indexPath {
 	NSLog(@"row : %d section : %d  page : %d", indexPath.row, indexPath.section, indexPath.page);
+    [XHFountionCommon setOfflineProgress:indexPath.row / 10.0];
 }
 
 - (XHContentView *)contentViewForPage:(NSInteger)page {

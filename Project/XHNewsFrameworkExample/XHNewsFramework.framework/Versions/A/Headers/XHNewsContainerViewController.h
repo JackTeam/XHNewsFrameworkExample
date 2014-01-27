@@ -19,6 +19,7 @@
 @property (nonatomic, assign) BOOL isEditing; // default is NO
 
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *unItems;
 
 - (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
 - (XHContentView *)contentViewAtPage:(NSInteger)page;

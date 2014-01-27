@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB5A0DA01896CD0C008BFCD4 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5A0D9F1896CD0C008BFCD4 /* XHNewsFramework.framework */; };
 		AB5A0DA51896CE5B008BFCD4 /* navbar_left_more.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5A0DA11896CE5B008BFCD4 /* navbar_left_more.png */; };
 		AB5A0DA61896CE5B008BFCD4 /* navbar_left_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5A0DA21896CE5B008BFCD4 /* navbar_left_more@2x.png */; };
 		AB5A0DA71896CE5B008BFCD4 /* navbar_right_more.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5A0DA31896CE5B008BFCD4 /* navbar_right_more.png */; };
 		AB5A0DA81896CE5B008BFCD4 /* navbar_right_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5A0DA41896CE5B008BFCD4 /* navbar_right_more@2x.png */; };
+		AB5A0DB31896F172008BFCD4 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5A0DB21896F172008BFCD4 /* XHNewsFramework.framework */; };
 		AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8682FD18942CFE00765392 /* Foundation.framework */; };
 		AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8682FF18942CFE00765392 /* CoreGraphics.framework */; };
 		AB86830218942CFE00765392 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB86830118942CFE00765392 /* UIKit.framework */; };
@@ -42,11 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB5A0D9F1896CD0C008BFCD4 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB5A0DA11896CE5B008BFCD4 /* navbar_left_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_left_more.png; sourceTree = "<group>"; };
 		AB5A0DA21896CE5B008BFCD4 /* navbar_left_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_left_more@2x.png"; sourceTree = "<group>"; };
 		AB5A0DA31896CE5B008BFCD4 /* navbar_right_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_right_more.png; sourceTree = "<group>"; };
 		AB5A0DA41896CE5B008BFCD4 /* navbar_right_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_right_more@2x.png"; sourceTree = "<group>"; };
+		AB5A0DB21896F172008BFCD4 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB8682FA18942CFE00765392 /* XHNewsFrameworkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHNewsFrameworkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8682FD18942CFE00765392 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB8682FF18942CFE00765392 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB5A0DA01896CD0C008BFCD4 /* XHNewsFramework.framework in Frameworks */,
+				AB5A0DB31896F172008BFCD4 /* XHNewsFramework.framework in Frameworks */,
 				AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */,
 				AB86830218942CFE00765392 /* UIKit.framework in Frameworks */,
 				AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */,
@@ -129,7 +129,7 @@
 		AB86830318942CFE00765392 /* XHNewsFrameworkExample */ = {
 			isa = PBXGroup;
 			children = (
-				AB5A0D9F1896CD0C008BFCD4 /* XHNewsFramework.framework */,
+				AB5A0DB21896F172008BFCD4 /* XHNewsFramework.framework */,
 				AB86830C18942CFE00765392 /* AppDelegate.h */,
 				AB86830D18942CFE00765392 /* AppDelegate.m */,
 				AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */,

@@ -18,10 +18,11 @@
 - (id)init {
 	if (self = [super init]) {
         NSMutableArray *items = [NSMutableArray new];
+        NSMutableArray *unItems = [NSMutableArray new];
         __weak typeof(self) weakSelf = self;
-        int numberOfPanels = 15;
+        int numberOfPanels = 20;
         for (int i = 0; i < numberOfPanels; i++) {
-            XHItem *item = [[XHItem alloc] initWithNormalImage:[UIImage imageNamed:@"tabBar-camera"] selectedImage:[UIImage imageNamed:@"tabBar-camera-on"] title:nil itemSelectedBlcok:^(XHItemView *itemView) {
+            XHItem *item = [[XHItem alloc] initWithNormalImage:nil selectedImage:nil title:[NSString stringWithFormat:@"Title%d", i] itemSelectedBlcok:^(XHItemView *itemView) {
                 NSInteger index = itemView.item.index;
                 NSLog(@"index : %d", index);
                 [weakSelf goToContentView:index];
@@ -37,6 +38,24 @@
             [items addObject:item];
         }
         self.items = items;
+        
+        for (int i = 20; i < numberOfPanels + 20; i++) {
+            XHItem *item = [[XHItem alloc] initWithNormalImage:nil selectedImage:nil title:[NSString stringWithFormat:@"Title%d", i] itemSelectedBlcok:^(XHItemView *itemView) {
+                NSInteger index = itemView.item.index;
+                NSLog(@"index : %d", index);
+                [weakSelf goToContentView:index];
+            }];
+            
+            NSMutableArray *rows = [NSMutableArray array];
+            int numberOfRows = 100;
+            for (int j = 0; j < numberOfRows; j++) {
+                [rows addObject:@""];
+            }
+            item.dataSources = rows;
+            
+            [unItems addObject:item];
+        }
+        self.unItems = items;
     }
 	return self;
 }

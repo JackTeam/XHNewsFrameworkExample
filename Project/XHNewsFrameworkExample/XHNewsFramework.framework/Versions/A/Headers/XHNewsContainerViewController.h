@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XHBaseViewController.h"
 #import "XHEdittingScrollView.h"
 #import "XHContentView.h"
 
-@interface XHNewsContainerViewController : UIViewController <UIScrollViewDelegate, XHContentViewDelegate>
+@interface XHNewsContainerViewController : XHBaseViewController <UIScrollViewDelegate, XHContentViewDelegate>
 
 @property (nonatomic, assign) CGFloat contentViewPaddingX; // default is 0
 @property (nonatomic, assign) CGFloat contentViewContentInsetTop; // default is 0

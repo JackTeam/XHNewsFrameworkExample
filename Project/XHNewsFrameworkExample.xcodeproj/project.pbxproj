@@ -28,8 +28,8 @@
 		AB86833718942DA100765392 /* tabBar-camera-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833318942DA100765392 /* tabBar-camera-on@2x.png */; };
 		AB86833818942DA100765392 /* tabBar-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833418942DA100765392 /* tabBar-camera.png */; };
 		AB86833918942DA100765392 /* tabBar-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB86833518942DA100765392 /* tabBar-camera@2x.png */; };
-		ABE77C531899CFE90006EF4A /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE77C521899CFE90006EF4A /* XHNewsFramework.framework */; };
 		ABE77C551899CFFA0006EF4A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE77C541899CFFA0006EF4A /* Accelerate.framework */; };
+		ABEDD07418AA296000094909 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEDD07318AA296000094909 /* XHNewsFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,8 @@
 		AB86833318942DA100765392 /* tabBar-camera-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera-on@2x.png"; sourceTree = "<group>"; };
 		AB86833418942DA100765392 /* tabBar-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera.png"; sourceTree = "<group>"; };
 		AB86833518942DA100765392 /* tabBar-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-camera@2x.png"; sourceTree = "<group>"; };
-		ABE77C521899CFE90006EF4A /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		ABE77C541899CFFA0006EF4A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		ABEDD07318AA296000094909 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABE77C551899CFFA0006EF4A /* Accelerate.framework in Frameworks */,
-				ABE77C531899CFE90006EF4A /* XHNewsFramework.framework in Frameworks */,
+				ABEDD07418AA296000094909 /* XHNewsFramework.framework in Frameworks */,
 				AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */,
 				AB86830218942CFE00765392 /* UIKit.framework in Frameworks */,
 				AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */,
@@ -133,7 +133,7 @@
 		AB86830318942CFE00765392 /* XHNewsFrameworkExample */ = {
 			isa = PBXGroup;
 			children = (
-				ABE77C521899CFE90006EF4A /* XHNewsFramework.framework */,
+				ABEDD07318AA296000094909 /* XHNewsFramework.framework */,
 				AB86830C18942CFE00765392 /* AppDelegate.h */,
 				AB86830D18942CFE00765392 /* AppDelegate.m */,
 				AB86832F18942D9A00765392 /* XHNeteaseNewsViewController.h */,

@@ -7,55 +7,130 @@
 //
 
 #import "XHNeteaseNewsViewController.h"
-#import <XHNewsFramework/XHItemView.h>
-#import <XHNewsFramework/XHFountionCommon.h>
+#import <XHNewsFramework/XHMenu.h>
+#import <XHNewsFramework/XHNewsDetail.h>
+#import <XHNewsFramework/XHScrollBannerView.h>
+
+#import "HUAJIENewsCell.h"
+#import "HUAJIEBannerView.h"
 
 @interface XHNeteaseNewsViewController ()
+@property (nonatomic, strong) NSMutableArray *bannerViews;
+@property (nonatomic, strong) XHScrollBannerView *scrollBannerView;
 @end
 
 @implementation XHNeteaseNewsViewController
+
+#pragma mark - Perprotys
+
+- (NSMutableArray *)bannerViews {
+    if (!_bannerViews) {
+        _bannerViews = [[NSMutableArray alloc] init];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+        [_bannerViews addObject:[[HUAJIEBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.scrollBannerView.bounds), CGRectGetHeight(self.scrollBannerView.bounds))]];
+    }
+    return _bannerViews;
+}
+
+- (XHScrollBannerView *)scrollBannerView {
+    if (!_scrollBannerView) {
+        __weak typeof(self) weakSelf = self;
+        _scrollBannerView = [[XHScrollBannerView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 200) animationDuration:3.0f];
+        self.scrollBannerView.totalPagesCount = ^NSUInteger(void){
+            return weakSelf.bannerViews.count;
+        };
+        self.scrollBannerView.fetchContentViewAtIndex = ^UIView *(NSUInteger pageIndex){
+            return weakSelf.bannerViews[pageIndex];
+        };
+        self.scrollBannerView.fetchFocusTitle = ^NSString *(NSUInteger pageIndex) {
+            if (pageIndex == 0) {
+                return @"我是皇上，你想怎样？";
+            } else if (pageIndex == 1) {
+                return @"我是王子，那你又想怎样？";
+            } else if (pageIndex == 2) {
+                return @"我是Jack，那你还想怎样？";
+            } else {
+                return @"我管你是谁，我就是仿网易新闻";
+            }
+        };
+        _scrollBannerView.didSelectCompled = ^(NSUInteger selectIndex) {
+            NSLog(@"selectIndex : %d", selectIndex);
+        };
+    }
+    return _scrollBannerView;
+}
+#pragma mark - Life cycle
 
 - (id)init {
 	if (self = [super init]) {
         NSMutableArray *items = [NSMutableArray new];
         NSMutableArray *unItems = [NSMutableArray new];
-        __weak typeof(self) weakSelf = self;
-        int numberOfPanels = 20;
+        int numberOfPanels = 15;
         for (int i = 0; i < numberOfPanels; i++) {
-            XHItem *item = [[XHItem alloc] initWithNormalImage:nil selectedImage:nil title:[NSString stringWithFormat:@"Title%d", i] itemSelectedBlcok:^(XHItemView *itemView) {
-                NSInteger index = itemView.item.index;
-                NSLog(@"index : %d", index);
-                [weakSelf goToContentView:index];
-            }];
+            XHMenu *item = [[XHMenu alloc] init];
+            NSString *title;
+            switch (i) {
+                case 0:
+                    title = @"头条";
+                    break;
+                case 1:
+                    title = @"热点新闻";
+                    break;
+                case 2:
+                    title = @"原创";
+                    break;
+                case 3:
+                    title = @"汽车";
+                    break;
+                case 4:
+                    title = @"CBA";
+                    break;
+                case 5:
+                    title = @"NBA";
+                    break;
+                case 6:
+                    title = @"热点新闻";
+                    break;
+                case 8:
+                    title = @"房产";
+                    break;
+                case 9:
+                    title = @"新闻热点";
+                    break;
+                default:
+                    title = @"热点";
+                    break;
+            }
+            item.title = title;
+            item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+            item.titleFont = [UIFont boldSystemFontOfSize:16];
+            
+            XHMenu *unItem = [[XHMenu alloc] init];
+            unItem.title = [NSString stringWithFormat:@"Title%d", i + numberOfPanels];
+            unItem.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+            unItem.titleFont = [UIFont boldSystemFontOfSize:16];
             
             NSMutableArray *rows = [NSMutableArray array];
-            int numberOfRows = 100;
+            int numberOfRows = 10;
             for (int j = 0; j < numberOfRows; j++) {
-                [rows addObject:@""];
+                XHNewsDetail *newsDetail = [[XHNewsDetail alloc] init];
+                newsDetail.newsTitle = @"新浪微博被收购";
+                newsDetail.newsContent = @"不知道为什么，就这样被收购了，可能是还没有发挥创新吧！";
+                [rows addObject:newsDetail];
             }
             item.dataSources = rows;
+            unItem.dataSources = rows;
             
             [items addObject:item];
+            
+            [unItems addObject:unItem];
         }
         self.items = items;
-        
-        for (int i = 20; i < numberOfPanels + 20; i++) {
-            XHItem *item = [[XHItem alloc] initWithNormalImage:nil selectedImage:nil title:[NSString stringWithFormat:@"Title%d", i] itemSelectedBlcok:^(XHItemView *itemView) {
-                NSInteger index = itemView.item.index;
-                NSLog(@"index : %d", index);
-                [weakSelf goToContentView:index];
-            }];
-            
-            NSMutableArray *rows = [NSMutableArray array];
-            int numberOfRows = 100;
-            for (int j = 0; j < numberOfRows; j++) {
-                [rows addObject:@""];
-            }
-            item.dataSources = rows;
-            
-            [unItems addObject:item];
-        }
-        self.unItems = items;
+        self.unItems = unItems;
     }
 	return self;
 }
@@ -70,6 +145,9 @@
 	// Do any additional setup after loading the view.
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
         [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.title = @"网易新闻";
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,29 +160,26 @@
 
 - (NSInteger)numberOfContentViews {
 	int numberOfPanels = [self.items count];
-	[self setTitle:[NSString stringWithFormat:@"%i contentView(s)", numberOfPanels]];
-	
 	return numberOfPanels;
 }
 
 - (NSInteger)contentView:(XHContentView *)contentView numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
-    XHItem *item = [self.items objectAtIndex:page];
+    XHMenu *item = [self.items objectAtIndex:page];
 	return [item.dataSources count];
 }
 
 - (UITableViewCell *)contentView:(XHContentView *)contentView cellForRowAtIndexPath:(XHPageIndexPath *)indexPath {
-	static NSString *identity = @"UITableViewCell";
-	UITableViewCell *cell = (UITableViewCell*)[contentView.tableView dequeueReusableCellWithIdentifier:identity];
-	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identity];
-	}
-	[[cell textLabel] setText:[NSString stringWithFormat:@"contentView %i section %i row %i", indexPath.page, indexPath.section, indexPath.row+1]];
+	static NSString *cellIdentifier = @"cellIdentifier";
+	HUAJIENewsCell *cell = [contentView.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[HUAJIENewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
 	return cell;
 }
 
 - (void)contentView:(XHContentView *)contentView didSelectRowAtIndexPath:(XHPageIndexPath *)indexPath {
 	NSLog(@"row : %d section : %d  page : %d", indexPath.row, indexPath.section, indexPath.page);
-    [XHFountionCommon setOfflineProgress:indexPath.row / 10.0];
+    [super contentView:contentView didSelectRowAtIndexPath:indexPath];
 }
 
 - (XHContentView *)contentViewForPage:(NSInteger)page {
@@ -113,7 +188,17 @@
 	if (contentView == nil) {
 		contentView = [[XHContentView alloc] initWithIdentifier:identifier];
 	}
+    if (!page)
+        contentView.tableView.tableHeaderView = self.scrollBannerView;
+    else
+        contentView.tableView.tableHeaderView = nil;
 	return contentView;
+}
+
+#pragma mark - UITableView delegate
+
+- (CGFloat)contentView:(XHContentView *)contentView heightForRowAtIndexPath:(XHPageIndexPath *)indexPath {
+    return 100;
 }
 
 @end

@@ -20,6 +20,15 @@
 #   define UILineBreakModeCharacterWrap      NSLineBreakByWordWrapping
 #endif
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
+#define IF_IOS7_OR_GREATER(...) \
+if (kCFCoreFoundationVersionNumber > kCFCoreFoundationVersionNumber_iOS_6_1) \
+{ \
+__VA_ARGS__ \
+}
+#else
+#define IF_IOS7_OR_GREATER(...)
+#endif
 
 @interface XHFountionCommon : NSObject
 + (CGFloat)getAdapterHeight;

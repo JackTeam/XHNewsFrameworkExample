@@ -31,6 +31,11 @@ __VA_ARGS__ \
 #endif
 
 @interface XHFountionCommon : NSObject
+
++ (BOOL)iOS7;
+
 + (CGFloat)getAdapterHeight;
+
 + (void)setOfflineProgress:(CGFloat)progress;
+
 @end

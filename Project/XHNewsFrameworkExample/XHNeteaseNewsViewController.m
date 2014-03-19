@@ -146,7 +146,8 @@
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])
         [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
+        self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"网易新闻";
 }
 

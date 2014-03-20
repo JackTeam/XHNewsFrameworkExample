@@ -34,13 +34,7 @@
 - (CGSize)contentViewSize;
 - (NSInteger)numberOfVisibleContentViews;
 
-#pragma mark adding and removing page
-- (void)addPage;
-- (void)removeCurrentPage;
-- (void)removeContentOfPage:(NSInteger)page;
-- (void)pushNextPage;
-- (void)jumpToPreviousPage;
-
+#pragma mark - DataSource
 - (NSInteger)numberOfContentViews;
 
 - (void)goToContentView:(NSInteger)index;

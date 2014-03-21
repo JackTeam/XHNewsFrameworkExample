@@ -1,4 +1,5 @@
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkExample.gif)
+![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkNOW.gif)
 
 ## 中文：   
 XHNewsFramework是一个快速的集成和开发框架的新闻应用程序,在仿网易新闻应App的基础上完成的框架。   

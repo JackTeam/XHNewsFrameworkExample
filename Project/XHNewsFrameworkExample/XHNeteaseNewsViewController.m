@@ -65,72 +65,85 @@
 }
 #pragma mark - Life cycle
 
-- (id)init {
-	if (self = [super init]) {
-        NSMutableArray *items = [NSMutableArray new];
-        NSMutableArray *unItems = [NSMutableArray new];
-        int numberOfPanels = 15;
-        for (int i = 0; i < numberOfPanels; i++) {
-            XHMenu *item = [[XHMenu alloc] init];
-            NSString *title;
-            switch (i) {
-                case 0:
-                    title = @"头条";
-                    break;
-                case 1:
-                    title = @"热点新闻";
-                    break;
-                case 2:
-                    title = @"原创";
-                    break;
-                case 3:
-                    title = @"汽车";
-                    break;
-                case 4:
-                    title = @"CBA";
-                    break;
-                case 5:
-                    title = @"NBA";
-                    break;
-                case 6:
-                    title = @"热点新闻";
-                    break;
-                case 8:
-                    title = @"房产";
-                    break;
-                case 9:
-                    title = @"新闻热点";
-                    break;
-                default:
-                    title = @"热点";
-                    break;
-            }
-            item.title = title;
-            item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
-            item.titleFont = [UIFont boldSystemFontOfSize:16];
-            
-            XHMenu *unItem = [[XHMenu alloc] init];
-            unItem.title = [NSString stringWithFormat:@"Title%d", i + numberOfPanels];
-            unItem.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
-            unItem.titleFont = [UIFont boldSystemFontOfSize:16];
-            
-            NSMutableArray *rows = [NSMutableArray array];
-            int numberOfRows = 10;
-            for (int j = 0; j < numberOfRows; j++) {
-                XHNewsDetail *newsDetail = [[XHNewsDetail alloc] init];
-                newsDetail.newsTitle = @"新浪微博被收购";
-                newsDetail.newsContent = @"不知道为什么，就这样被收购了，可能是还没有发挥创新吧！";
-                [rows addObject:newsDetail];
-            }
-            item.dataSources = rows;
-            unItem.dataSources = rows;
-            
-            [items addObject:item];
-            
-            [unItems addObject:unItem];
+- (void)loadDataSource {
+    NSMutableArray *items = [NSMutableArray new];
+    NSMutableArray *unItems = [NSMutableArray new];
+    int numberOfPanels = 15;
+    for (int i = 0; i < numberOfPanels; i++) {
+        XHMenu *item = [[XHMenu alloc] init];
+        NSString *title;
+        switch (i) {
+            case 0:
+                title = @"头条";
+                break;
+            case 1:
+                title = @"热点新闻";
+                break;
+            case 2:
+                title = @"原创";
+                break;
+            case 3:
+                title = @"汽车";
+                break;
+            case 4:
+                title = @"CBA";
+                break;
+            case 5:
+                title = @"NBA";
+                break;
+            case 6:
+                title = @"热点新闻";
+                break;
+            case 8:
+                title = @"房产";
+                break;
+            case 9:
+                title = @"新闻热点";
+                break;
+            default:
+                title = @"热点";
+                break;
         }
-        self.items = items;
-        self.unItems = unItems;
+        item.title = title;
+        item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+        item.titleFont = [UIFont boldSystemFontOfSize:16];
+        
+        XHMenu *unItem = [[XHMenu alloc] init];
+        unItem.title = [NSString stringWithFormat:@"Title%d", i + numberOfPanels];
+        unItem.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+        unItem.titleFont = [UIFont boldSystemFontOfSize:16];
+        
+        NSMutableArray *rows = [NSMutableArray array];
+        int numberOfRows = 10;
+        for (int j = 0; j < numberOfRows; j++) {
+            XHNewsDetail *newsDetail = [[XHNewsDetail alloc] init];
+            newsDetail.newsTitle = @"新浪微博被收购";
+            newsDetail.newsContent = @"不知道为什么，就这样被收购了，可能是还没有发挥创新吧！";
+            [rows addObject:newsDetail];
+        }
+        item.dataSources = rows;
+        unItem.dataSources = rows;
+        
+        [items addObject:item];
+        
+        [unItems addObject:unItem];
+    }
+    self.items = items;
+    self.unItems = unItems;
+}
+
+- (id)init {
+    self = [super init];
+	if (self) {
+        // custom UI
+        self.topScrollViewToolBarBackgroundColor = [UIColor colorWithRed:0.362 green:0.555 blue:0.902 alpha:1.000];
+        self.indicatorColor = [UIColor colorWithRed:0.219 green:0.752 blue:0.002 alpha:1.000];
+        self.managerButtonBackgroundImage = [UIImage imageNamed:@"managerMenuButton"];
+        
+        self.midContentLogoImage = [UIImage imageNamed:@"logo"];
+        self.contentScrollViewBackgroundColor = [UIColor colorWithRed:1.000 green:0.724 blue:0.640 alpha:1.000];
+        
+        [self loadDataSource];
     }
 	return self;
 }

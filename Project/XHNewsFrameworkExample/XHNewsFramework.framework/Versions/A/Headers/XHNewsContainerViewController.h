@@ -25,10 +25,6 @@
 - (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
 - (XHContentView *)contentViewAtPage:(NSInteger)page;
 
-#pragma mark editing
-- (void)setEditing:(BOOL)isEditing;
-- (void)shouldWiggle:(BOOL)wiggle;
-
 #pragma mark frame and sizes
 - (CGRect)scrollViewFrame;
 - (CGSize)contentViewSize;
@@ -37,6 +33,20 @@
 #pragma mark - DataSource
 - (NSInteger)numberOfContentViews;
 
+#pragma mark - scroll the contentView
 - (void)goToContentView:(NSInteger)index;
+
+#pragma mark - Custom UI
+// top
+@property (nonatomic, strong) UIImage *topScrollViewToolBarBackgroundImage; // default is nil
+@property (nonatomic, strong) UIColor *topScrollViewToolBarBackgroundColor; // default is [UIColor colorWithWhite:0.902 alpha:1.000]
+@property (nonatomic, strong) UIImage *managerButtonBackgroundImage; // default is arrow image
+@property (nonatomic, strong) UIColor *indicatorColor; // default is redColor
+
+// mid
+@property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo
+
+// contentScrollView
+@property (nonatomic, strong) UIColor *contentScrollViewBackgroundColor; // default is [UIColor whiteColor]
 
 @end

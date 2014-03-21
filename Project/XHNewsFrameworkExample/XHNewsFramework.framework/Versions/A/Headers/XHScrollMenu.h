@@ -33,6 +33,11 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) XHIndicatorView *indicatorView;
 
+- (void)setBackgroundImage:(UIImage *)backgroundImage;
+- (void)setContainerBackgroundColor:(UIColor *)backgroundColor;
+- (void)setManagerButtonImage:(UIImage *)managerButtonImage;
+- (void)setIndicatorColor:(UIColor *)indicatorColor;
+
 // DataSource
 @property (nonatomic, strong) NSArray *menus;
 

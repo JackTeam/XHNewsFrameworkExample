@@ -16,6 +16,10 @@
 @property (nonatomic, strong) UIColor *titleSelectedColor;
 @property (nonatomic, strong) UIColor *titleHighlightedColor;
 
+@property (nonatomic, strong) UIImage *normalImage;
+@property (nonatomic, strong) UIImage *hightlightedImage;
+@property (nonatomic, strong) UIImage *selectedImage;
+
 @property (nonatomic, copy) NSString *dataSourcesStringUrl;
 @property (nonatomic, strong) NSArray *dataSources;
 

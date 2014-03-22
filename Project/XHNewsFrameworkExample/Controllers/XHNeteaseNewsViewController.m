@@ -136,12 +136,12 @@
     self = [super init];
 	if (self) {
         // custom UI
-        self.topScrollViewToolBarBackgroundColor = [UIColor colorWithRed:0.362 green:0.555 blue:0.902 alpha:1.000];
-        self.indicatorColor = [UIColor colorWithRed:0.219 green:0.752 blue:0.002 alpha:1.000];
-        self.managerButtonBackgroundImage = [UIImage imageNamed:@"managerMenuButton"];
-        
-        self.midContentLogoImage = [UIImage imageNamed:@"logo"];
-        self.contentScrollViewBackgroundColor = [UIColor colorWithRed:1.000 green:0.724 blue:0.640 alpha:1.000];
+//        self.topScrollViewToolBarBackgroundColor = [UIColor colorWithRed:0.362 green:0.555 blue:0.902 alpha:1.000];
+//        self.indicatorColor = [UIColor colorWithRed:0.219 green:0.752 blue:0.002 alpha:1.000];
+//        self.managerButtonBackgroundImage = [UIImage imageNamed:@"managerMenuButton"];
+//        
+//        self.midContentLogoImage = [UIImage imageNamed:@"logo"];
+//        self.contentScrollViewBackgroundColor = [UIColor colorWithRed:1.000 green:0.724 blue:0.640 alpha:1.000];
         
         [self loadDataSource];
     }
@@ -162,6 +162,19 @@
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
         self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"网易新闻";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Left", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(left)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Right", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(right)];
+}
+
+- (void)left {
+    [self.drawerController toggleDrawerSide:XHDrawerSideLeft animated:YES completion:NULL];
+}
+
+- (void)right {
+    [self.drawerController toggleDrawerSide:XHDrawerSideRight animated:YES completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

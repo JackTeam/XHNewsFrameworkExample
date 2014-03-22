@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "XHNeteaseNewsViewController.h"
+#import "XHDrawerController.h"
+#import "XHExampleLeftSideDrawerViewController.h"
+#import "XHExampleRightSideDrawerViewController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +19,28 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XHNeteaseNewsViewController alloc] init]];
+    
+    // 左右侧滑集合框架
+    XHDrawerController *drawerController = [[XHDrawerController alloc] init];
+    drawerController.springAnimationOn = YES;
+    
+    XHExampleLeftSideDrawerViewController *leftSideDrawerViewController = [[XHExampleLeftSideDrawerViewController alloc] init];
+    
+    XHExampleRightSideDrawerViewController *rightSideDrawerViewController = [[XHExampleRightSideDrawerViewController alloc] init];
+    
+    drawerController.leftViewController = leftSideDrawerViewController;
+    drawerController.rightViewController = rightSideDrawerViewController;
+    drawerController.centerViewController = [[UINavigationController alloc] initWithRootViewController:[[XHNeteaseNewsViewController alloc] init]];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MenuBackground"]];
+    [backgroundImageView setContentMode:UIViewContentModeCenter];
+    drawerController.backgroundView = backgroundImageView;
+    
+    
+    self.window.rootViewController = drawerController;
+    
+    // 主页原本框架
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[XHNeteaseNewsViewController alloc] init]];
     [self.window makeKeyAndVisible];
     return YES;
 }

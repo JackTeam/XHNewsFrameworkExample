@@ -32,6 +32,8 @@
 // UI
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) XHIndicatorView *indicatorView;
+@property (nonatomic, strong) UIImage *leftShadowImage;
+@property (nonatomic, strong) UIImage *rightShadowImage;
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage;
 - (void)setContainerBackgroundColor:(UIColor *)backgroundColor;

@@ -42,6 +42,9 @@
 @property (nonatomic, strong) UIColor *topScrollViewToolBarBackgroundColor; // default is [UIColor colorWithWhite:0.902 alpha:1.000]
 @property (nonatomic, strong) UIImage *managerButtonBackgroundImage; // default is arrow image
 @property (nonatomic, strong) UIColor *indicatorColor; // default is redColor
+@property (nonatomic, assign) CGFloat topScrollViewToolBarHieght; // default is 36
+@property (nonatomic, strong) UIImage *leftShadowImage;
+@property (nonatomic, strong) UIImage *rightShadowImage;
 
 // mid
 @property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo

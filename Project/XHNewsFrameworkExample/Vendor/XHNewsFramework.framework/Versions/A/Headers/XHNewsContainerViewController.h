@@ -49,4 +49,8 @@
 // contentScrollView
 @property (nonatomic, strong) UIColor *contentScrollViewBackgroundColor; // default is [UIColor whiteColor]
 
+#pragma mark - Custom Action
+// 管理menu item的按钮事件，由你自己发挥
+- (void)didOpenManagerItems;
+
 @end

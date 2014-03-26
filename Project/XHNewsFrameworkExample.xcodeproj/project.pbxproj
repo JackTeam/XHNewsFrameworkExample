@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74D07FAB18E272E8004008F0 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */; };
 		AB4D0A5118DD248600C7858F /* XHExampleLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A3F18DD248600C7858F /* XHExampleLeftSideDrawerViewController.m */; };
 		AB4D0A5218DD248600C7858F /* XHExampleSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4118DD248600C7858F /* XHExampleSideDrawerViewController.m */; };
 		AB4D0A5318DD248600C7858F /* XHNeteaseNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4318DD248600C7858F /* XHNeteaseNewsViewController.m */; };
 		AB4D0A5418DD248600C7858F /* XHDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4718DD248600C7858F /* XHDrawerController.m */; };
 		AB4D0A5518DD248600C7858F /* XHZoomDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4A18DD248600C7858F /* XHZoomDrawerView.m */; };
-		AB4D0A5618DD248600C7858F /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4D0A4B18DD248600C7858F /* XHNewsFramework.framework */; };
 		AB4D0A5718DD248600C7858F /* HUAJIEBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4E18DD248600C7858F /* HUAJIEBannerView.m */; };
 		AB4D0A5818DD248600C7858F /* HUAJIENewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A5018DD248600C7858F /* HUAJIENewsCell.m */; };
 		AB4D0A6818DD249900C7858F /* info_offline_flash.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D0A5A18DD249900C7858F /* info_offline_flash.png */; };
@@ -56,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB4D0A3E18DD248600C7858F /* XHExampleLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHExampleLeftSideDrawerViewController.h; sourceTree = "<group>"; };
 		AB4D0A3F18DD248600C7858F /* XHExampleLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHExampleLeftSideDrawerViewController.m; sourceTree = "<group>"; };
 		AB4D0A4018DD248600C7858F /* XHExampleSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHExampleSideDrawerViewController.h; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		AB4D0A4818DD248600C7858F /* XHDrawerControllerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDrawerControllerHeader.h; sourceTree = "<group>"; };
 		AB4D0A4918DD248600C7858F /* XHZoomDrawerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHZoomDrawerView.h; sourceTree = "<group>"; };
 		AB4D0A4A18DD248600C7858F /* XHZoomDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHZoomDrawerView.m; sourceTree = "<group>"; };
-		AB4D0A4B18DD248600C7858F /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		AB4D0A4D18DD248600C7858F /* HUAJIEBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUAJIEBannerView.h; sourceTree = "<group>"; };
 		AB4D0A4E18DD248600C7858F /* HUAJIEBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUAJIEBannerView.m; sourceTree = "<group>"; };
 		AB4D0A4F18DD248600C7858F /* HUAJIENewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUAJIENewsCell.h; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABE77C551899CFFA0006EF4A /* Accelerate.framework in Frameworks */,
-				AB4D0A5618DD248600C7858F /* XHNewsFramework.framework in Frameworks */,
+				74D07FAB18E272E8004008F0 /* XHNewsFramework.framework in Frameworks */,
 				AB86830018942CFE00765392 /* CoreGraphics.framework in Frameworks */,
 				AB86830218942CFE00765392 /* UIKit.framework in Frameworks */,
 				AB8682FE18942CFE00765392 /* Foundation.framework in Frameworks */,
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4D0A4518DD248600C7858F /* XHDrawerController */,
-				AB4D0A4B18DD248600C7858F /* XHNewsFramework.framework */,
+				74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -520,6 +520,7 @@
 					"$(inherited)",
 					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample,
 					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample/Vendor,
+					"$(PROJECT_DIR)/XHNewsFrameworkExample/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHNewsFrameworkExample/XHNewsFrameworkExample-Prefix.pch";
@@ -540,6 +541,7 @@
 					"$(inherited)",
 					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample,
 					/Users/JackMacbook/JackTeamDeveloper/JackTeamGithub/XHNewsFrameworkExample/Project/XHNewsFrameworkExample/Vendor,
+					"$(PROJECT_DIR)/XHNewsFrameworkExample/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHNewsFrameworkExample/XHNewsFrameworkExample-Prefix.pch";

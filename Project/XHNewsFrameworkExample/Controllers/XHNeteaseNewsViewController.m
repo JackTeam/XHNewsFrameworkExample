@@ -156,6 +156,16 @@
     [super viewDidAppear:animated];
 }
 
+- (void)left {
+    [self.drawerController toggleDrawerSide:XHDrawerSideLeft animated:YES completion:NULL];
+}
+
+- (void)right {
+    [self.drawerController toggleDrawerSide:XHDrawerSideRight animated:YES completion:^(BOOL finished) {
+        
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -166,6 +176,9 @@
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
         self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"网易新闻";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Left", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(left)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Right", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(right)];
 }
 
 - (void)didReceiveMemoryWarning

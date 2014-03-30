@@ -48,6 +48,7 @@
 
 // mid
 @property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo
+@property (nonatomic, strong, readonly) XHEdittingScrollView *scrollView;
 
 // contentScrollView
 @property (nonatomic, strong) UIColor *contentScrollViewBackgroundColor; // default is [UIColor whiteColor]

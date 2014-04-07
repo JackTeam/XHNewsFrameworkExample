@@ -68,7 +68,7 @@
 - (void)loadDataSource {
     NSMutableArray *items = [NSMutableArray new];
     NSMutableArray *unItems = [NSMutableArray new];
-    int numberOfPanels = 15;
+    int numberOfPanels = 5;
     for (int i = 0; i < numberOfPanels; i++) {
         XHMenu *item = [[XHMenu alloc] init];
         NSString *title;
@@ -157,14 +157,10 @@
 }
 
 - (void)left {
-//    [self.drawerController toggleDrawerSide:XHDrawerSideLeft animated:YES completion:NULL];
     [self.sideMenuViewController presentMenuViewController];
 }
 
 - (void)right {
-//    [self.drawerController toggleDrawerSide:XHDrawerSideRight animated:YES completion:^(BOOL finished) {
-//    
-//    }];
     [self.sideMenuViewController presentRightViewController];
 }
 

@@ -68,7 +68,7 @@
 - (void)loadDataSource {
     NSMutableArray *items = [NSMutableArray new];
     NSMutableArray *unItems = [NSMutableArray new];
-    int numberOfPanels = 5;
+    int numberOfPanels = 15;
     for (int i = 0; i < numberOfPanels; i++) {
         XHMenu *item = [[XHMenu alloc] init];
         NSString *title;
@@ -99,6 +99,18 @@
                 break;
             case 9:
                 title = @"新闻热点";
+                break;
+            case 10:
+                title = @"我的MBA";
+                break;
+            case 11:
+                title = @"大神空间";
+                break;
+            case 12:
+                title = @"飞呀飞呀";
+                break;
+            case 13:
+                title = @"文章马伊";
                 break;
             default:
                 title = @"热点";

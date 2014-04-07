@@ -1,3 +1,4 @@
+![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFramewrokPanGestureRecognizer.gif)
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkExample.gif)
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkNOW.gif)
 

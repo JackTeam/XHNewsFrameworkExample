@@ -157,13 +157,19 @@
 }
 
 - (void)left {
-    [self.drawerController toggleDrawerSide:XHDrawerSideLeft animated:YES completion:NULL];
+//    [self.drawerController toggleDrawerSide:XHDrawerSideLeft animated:YES completion:NULL];
+    [self.sideMenuViewController presentMenuViewController];
 }
 
 - (void)right {
-    [self.drawerController toggleDrawerSide:XHDrawerSideRight animated:YES completion:^(BOOL finished) {
-        
-    }];
+//    [self.drawerController toggleDrawerSide:XHDrawerSideRight animated:YES completion:^(BOOL finished) {
+//    
+//    }];
+    [self.sideMenuViewController presentRightViewController];
+}
+
+- (void)receiveScrollViewPanGestureRecognizerHandle:(UIPanGestureRecognizer *)scrollViewPanGestureRecognizer {
+    [self.sideMenuViewController panGestureRecognized:scrollViewPanGestureRecognizer];
 }
 
 - (void)viewDidLoad

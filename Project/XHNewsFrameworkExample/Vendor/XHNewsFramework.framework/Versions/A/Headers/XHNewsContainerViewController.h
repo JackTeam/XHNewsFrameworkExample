@@ -48,7 +48,6 @@
 
 // mid
 @property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo
-@property (nonatomic, strong, readonly) XHEdittingScrollView *scrollView;
 
 // contentScrollView
 @property (nonatomic, strong) UIColor *contentScrollViewBackgroundColor; // default is [UIColor whiteColor]
@@ -56,5 +55,10 @@
 #pragma mark - Custom Action
 // 管理menu item的按钮事件，由你自己发挥
 - (void)didOpenManagerItems;
+
+
+@property (nonatomic, assign) BOOL enableSideMenu; // default is YES
+// 用于解决手势冲突的问题，内部已经解决细节的问题，只需要直接传递就可以，因为内部判断好了向左还是向右，
+- (void)receiveScrollViewPanGestureRecognizerHandle:(UIPanGestureRecognizer *)scrollViewPanGestureRecognizer;
 
 @end

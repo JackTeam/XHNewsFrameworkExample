@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74B7F40118F2EEBD004EE42A /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F3FC18F2EEBD004EE42A /* RECommonFunctions.m */; };
+		74B7F40218F2EEBD004EE42A /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F3FE18F2EEBD004EE42A /* RESideMenu.m */; };
+		74B7F40318F2EEBD004EE42A /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F40018F2EEBD004EE42A /* UIViewController+RESideMenu.m */; };
 		74D07FAB18E272E8004008F0 /* XHNewsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */; };
 		74E272F318EE535900AC103D /* page_state_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E272F118EE535900AC103D /* page_state_highlight@2x.png */; };
 		74E272F418EE535900AC103D /* page_state_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E272F218EE535900AC103D /* page_state_normal@2x.png */; };
 		AB4D0A5118DD248600C7858F /* XHExampleLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A3F18DD248600C7858F /* XHExampleLeftSideDrawerViewController.m */; };
 		AB4D0A5218DD248600C7858F /* XHExampleSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4118DD248600C7858F /* XHExampleSideDrawerViewController.m */; };
 		AB4D0A5318DD248600C7858F /* XHNeteaseNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4318DD248600C7858F /* XHNeteaseNewsViewController.m */; };
-		AB4D0A5418DD248600C7858F /* XHDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4718DD248600C7858F /* XHDrawerController.m */; };
-		AB4D0A5518DD248600C7858F /* XHZoomDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4A18DD248600C7858F /* XHZoomDrawerView.m */; };
 		AB4D0A5718DD248600C7858F /* HUAJIEBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A4E18DD248600C7858F /* HUAJIEBannerView.m */; };
 		AB4D0A5818DD248600C7858F /* HUAJIENewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0A5018DD248600C7858F /* HUAJIENewsCell.m */; };
 		AB4D0A6818DD249900C7858F /* info_offline_flash.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4D0A5A18DD249900C7858F /* info_offline_flash.png */; };
@@ -58,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74B7F3FB18F2EEBD004EE42A /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		74B7F3FC18F2EEBD004EE42A /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		74B7F3FD18F2EEBD004EE42A /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		74B7F3FE18F2EEBD004EE42A /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		74B7F3FF18F2EEBD004EE42A /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		74B7F40018F2EEBD004EE42A /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XHNewsFramework.framework; sourceTree = "<group>"; };
 		74E272F118EE535900AC103D /* page_state_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_state_highlight@2x.png"; sourceTree = "<group>"; };
 		74E272F218EE535900AC103D /* page_state_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_state_normal@2x.png"; sourceTree = "<group>"; };
@@ -67,11 +74,6 @@
 		AB4D0A4118DD248600C7858F /* XHExampleSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHExampleSideDrawerViewController.m; sourceTree = "<group>"; };
 		AB4D0A4218DD248600C7858F /* XHNeteaseNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNeteaseNewsViewController.h; sourceTree = "<group>"; };
 		AB4D0A4318DD248600C7858F /* XHNeteaseNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNeteaseNewsViewController.m; sourceTree = "<group>"; };
-		AB4D0A4618DD248600C7858F /* XHDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDrawerController.h; sourceTree = "<group>"; };
-		AB4D0A4718DD248600C7858F /* XHDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDrawerController.m; sourceTree = "<group>"; };
-		AB4D0A4818DD248600C7858F /* XHDrawerControllerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDrawerControllerHeader.h; sourceTree = "<group>"; };
-		AB4D0A4918DD248600C7858F /* XHZoomDrawerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHZoomDrawerView.h; sourceTree = "<group>"; };
-		AB4D0A4A18DD248600C7858F /* XHZoomDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHZoomDrawerView.m; sourceTree = "<group>"; };
 		AB4D0A4D18DD248600C7858F /* HUAJIEBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUAJIEBannerView.h; sourceTree = "<group>"; };
 		AB4D0A4E18DD248600C7858F /* HUAJIEBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUAJIEBannerView.m; sourceTree = "<group>"; };
 		AB4D0A4F18DD248600C7858F /* HUAJIENewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUAJIENewsCell.h; sourceTree = "<group>"; };
@@ -137,6 +139,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74B7F3FA18F2EEBD004EE42A /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				74B7F3FB18F2EEBD004EE42A /* RECommonFunctions.h */,
+				74B7F3FC18F2EEBD004EE42A /* RECommonFunctions.m */,
+				74B7F3FD18F2EEBD004EE42A /* RESideMenu.h */,
+				74B7F3FE18F2EEBD004EE42A /* RESideMenu.m */,
+				74B7F3FF18F2EEBD004EE42A /* UIViewController+RESideMenu.h */,
+				74B7F40018F2EEBD004EE42A /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
 		AB4D0A3D18DD248600C7858F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,22 +170,10 @@
 		AB4D0A4418DD248600C7858F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				AB4D0A4518DD248600C7858F /* XHDrawerController */,
+				74B7F3FA18F2EEBD004EE42A /* RESideMenu */,
 				74D07FAA18E272E8004008F0 /* XHNewsFramework.framework */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		AB4D0A4518DD248600C7858F /* XHDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				AB4D0A4618DD248600C7858F /* XHDrawerController.h */,
-				AB4D0A4718DD248600C7858F /* XHDrawerController.m */,
-				AB4D0A4818DD248600C7858F /* XHDrawerControllerHeader.h */,
-				AB4D0A4918DD248600C7858F /* XHZoomDrawerView.h */,
-				AB4D0A4A18DD248600C7858F /* XHZoomDrawerView.m */,
-			);
-			path = XHDrawerController;
 			sourceTree = "<group>";
 		};
 		AB4D0A4C18DD248600C7858F /* Views */ = {
@@ -393,16 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4D0A5418DD248600C7858F /* XHDrawerController.m in Sources */,
 				AB4D0A5118DD248600C7858F /* XHExampleLeftSideDrawerViewController.m in Sources */,
 				AB4D0A5818DD248600C7858F /* HUAJIENewsCell.m in Sources */,
 				AB4D0A5318DD248600C7858F /* XHNeteaseNewsViewController.m in Sources */,
+				74B7F40218F2EEBD004EE42A /* RESideMenu.m in Sources */,
 				AB86830E18942CFE00765392 /* AppDelegate.m in Sources */,
 				AB4D0A5718DD248600C7858F /* HUAJIEBannerView.m in Sources */,
 				AB86830A18942CFE00765392 /* main.m in Sources */,
-				AB4D0A5518DD248600C7858F /* XHZoomDrawerView.m in Sources */,
 				AB4D0A7818DD255C00C7858F /* XHExampleRightSideDrawerViewController.m in Sources */,
+				74B7F40118F2EEBD004EE42A /* RECommonFunctions.m in Sources */,
 				AB4D0A5218DD248600C7858F /* XHExampleSideDrawerViewController.m in Sources */,
+				74B7F40318F2EEBD004EE42A /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,9 @@
     
     XHExampleRightSideDrawerViewController *rightSideDrawerViewController = [[XHExampleRightSideDrawerViewController alloc] init];
     
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[[XHParallaxNavigationController alloc] initWithRootViewController:[[XHNeteaseNewsViewController alloc] init]] menuViewController:leftSideDrawerViewController];
+    XHParallaxNavigationController *parallaxNavigationController = [[XHParallaxNavigationController alloc] initWithRootViewController:[[XHNeteaseNewsViewController alloc] init]];
+    
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:parallaxNavigationController menuViewController:leftSideDrawerViewController];
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"MenuBackground"];
     sideMenuViewController.contentViewInPortraitOffsetCenterX = 40;
     sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent

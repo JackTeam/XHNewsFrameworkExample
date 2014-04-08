@@ -22,6 +22,8 @@ typedef void(^ParallaxNavigationControllerMovieCancel)(XHParallaxNavigationContr
 @property (nonatomic, assign) BOOL canDragBack;
 // 默认为毛玻璃不开启
 @property (nonatomic, assign) BOOL isBlurry;
+// 默认为有背景阴影
+@property (nonatomic, assign) BOOL shadowEffect;
 
 @property (nonatomic, copy) ParallaxNavigationControllerMovieBegin parallaxNavigationControllerMovieBegin;
 @property (nonatomic, copy) ParallaxNavigationControllerMovieEnd parallaxNavigationControllerMovieEnd;

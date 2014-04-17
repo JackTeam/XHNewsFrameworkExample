@@ -23,6 +23,13 @@
 - (CGFloat)contentView:(XHContentView *)contentView heightForHeaderInSection:(NSInteger)section;
 @end
 
+@protocol XHContentViewRefreshingDelegate <NSObject>
+
+- (void)pullDownRefreshingAction:(XHContentView *)contentView;
+- (void)pullUpRefreshingAction:(XHContentView *)contentView;
+
+@end
+
 @interface XHContentView : UIView <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) CGFloat transitionDuration; // default is 0.4
@@ -30,7 +37,11 @@
 @property (nonatomic, assign) NSInteger pageNumber;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, unsafe_unretained) id <XHContentViewDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id <XHContentViewRefreshingDelegate> refreshControlDelegate;
 @property (nonatomic, copy) NSString *identifier;
+
+@property (nonatomic, assign) BOOL pullDownRefreshed; // default is NO
+@property (nonatomic, assign) BOOL pullUpRefreshed; // default is NO
 
 #pragma mark init
 - (id)initWithIdentifier:(NSString *)identifier;
@@ -61,4 +72,9 @@
 #pragma mark page controll
 - (void)showNextContentView;
 - (void)showPreviousContentView;
+
+#pragma mark - 刷新的
+- (void)endPullDownRefreshing;
+- (void)endPullUpRefreshing;
+
 @end

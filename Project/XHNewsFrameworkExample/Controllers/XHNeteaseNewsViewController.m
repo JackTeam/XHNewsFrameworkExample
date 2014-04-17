@@ -14,9 +14,11 @@
 #import "HUAJIENewsCell.h"
 #import "HUAJIEBannerView.h"
 
-@interface XHNeteaseNewsViewController ()
+@interface XHNeteaseNewsViewController () <XHContentViewRefreshingDelegate>
+
 @property (nonatomic, strong) NSMutableArray *bannerViews;
 @property (nonatomic, strong) XHScrollBannerView *scrollBannerView;
+
 @end
 
 @implementation XHNeteaseNewsViewController
@@ -100,18 +102,6 @@
             case 9:
                 title = @"新闻热点";
                 break;
-            case 10:
-                title = @"我的MBA";
-                break;
-            case 11:
-                title = @"大神空间";
-                break;
-            case 12:
-                title = @"飞呀飞呀";
-                break;
-            case 13:
-                title = @"文章马伊";
-                break;
             default:
                 title = @"热点";
                 break;
@@ -168,18 +158,6 @@
     [super viewDidAppear:animated];
 }
 
-- (void)left {
-    [self.sideMenuViewController presentMenuViewController];
-}
-
-- (void)right {
-    [self.sideMenuViewController presentRightViewController];
-}
-
-- (void)receiveScrollViewPanGestureRecognizerHandle:(UIPanGestureRecognizer *)scrollViewPanGestureRecognizer {
-    [self.sideMenuViewController panGestureRecognized:scrollViewPanGestureRecognizer];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -190,15 +168,22 @@
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
         self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"网易新闻";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Left", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(left)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Right", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(right)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - contentView refreshControl delegate
+
+- (void)pullDownRefreshingAction:(XHContentView *)contentView {
+    [contentView performSelector:@selector(endPullDownRefreshing) withObject:nil afterDelay:3];
+}
+
+- (void)pullUpRefreshingAction:(XHContentView *)contentView {
+    [contentView performSelector:@selector(endPullUpRefreshing) withObject:nil afterDelay:3];
 }
 
 #pragma mark contentViews delegate/datasource
@@ -232,6 +217,8 @@
 	XHContentView *contentView = (XHContentView *)[self dequeueReusablePageWithIdentifier:identifier];
 	if (contentView == nil) {
 		contentView = [[XHContentView alloc] initWithIdentifier:identifier];
+        contentView.pullDownRefreshed = YES;
+        contentView.refreshControlDelegate = self;
 	}
     if (!page)
         contentView.tableView.tableHeaderView = self.scrollBannerView;

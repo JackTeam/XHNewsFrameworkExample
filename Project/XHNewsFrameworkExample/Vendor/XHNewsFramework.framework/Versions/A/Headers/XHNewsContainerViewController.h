@@ -44,6 +44,7 @@
 @property (nonatomic, strong) NSArray *unItems;
 - (NSInteger)numberOfVisibleContentViews;
 - (NSInteger)numberOfContentViews;
+- (void)reloadDataSource;
 
 
 #pragma mark - Reuse

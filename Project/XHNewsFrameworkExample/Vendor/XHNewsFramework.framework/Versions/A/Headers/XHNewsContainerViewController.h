@@ -13,28 +13,6 @@
 
 @interface XHNewsContainerViewController : XHBaseViewController <UIScrollViewDelegate, XHContentViewDelegate>
 
-@property (nonatomic, assign) CGFloat contentViewPaddingX; // default is 0
-@property (nonatomic, assign) CGFloat contentViewContentInsetTop; // default is 0
-@property (nonatomic, assign) int currentPage;
-@property (nonatomic, assign) int lastDisplayedPage;
-@property (nonatomic, assign) BOOL isEditing; // default is NO
-
-@property (nonatomic, strong) NSArray *items;
-@property (nonatomic, strong) NSArray *unItems;
-
-- (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
-- (XHContentView *)contentViewAtPage:(NSInteger)page;
-
-#pragma mark frame and sizes
-- (CGRect)scrollViewFrame;
-- (CGSize)contentViewSize;
-- (NSInteger)numberOfVisibleContentViews;
-
-#pragma mark - DataSource
-- (NSInteger)numberOfContentViews;
-
-#pragma mark - scroll the contentView
-- (void)goToContentView:(NSInteger)index;
 
 #pragma mark - Custom UI
 // top
@@ -48,15 +26,36 @@
 
 // mid
 @property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo
-
 // contentScrollView
 @property (nonatomic, strong) UIColor *contentScrollViewBackgroundColor; // default is [UIColor whiteColor]
+@property (nonatomic, assign) CGFloat contentViewPaddingX; // default is 0
+@property (nonatomic, assign) CGFloat contentViewContentInsetTop; // default is 0
+#pragma mark frame and sizes
+- (CGRect)scrollViewFrame;
+- (CGSize)contentViewSize;
+#pragma mark - scroll the contentView
+- (void)goToContentView:(NSInteger)index;
+
+
+#pragma mark - DataSource
+@property (nonatomic, assign) int currentPage;
+@property (nonatomic, assign) int lastDisplayedPage;
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *unItems;
+- (NSInteger)numberOfVisibleContentViews;
+- (NSInteger)numberOfContentViews;
+
+
+#pragma mark - Reuse
+- (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
+- (XHContentView *)contentViewAtPage:(NSInteger)page;
+
 
 #pragma mark - Custom Action
 // 管理menu item的按钮事件，由你自己发挥
 - (void)didOpenManagerItems;
 
-
+#pragma mark - 手势冲突解决
 @property (nonatomic, assign) BOOL enableSideMenu; // default is YES
 // 用于解决手势冲突的问题，内部已经解决细节的问题，只需要直接传递就可以，因为内部判断好了向左还是向右，
 - (void)receiveScrollViewPanGestureRecognizerHandle:(UIPanGestureRecognizer *)scrollViewPanGestureRecognizer;

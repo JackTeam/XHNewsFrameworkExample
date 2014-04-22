@@ -23,6 +23,20 @@
 
 @implementation XHNeteaseNewsViewController
 
+#pragma mark - Action
+
+- (void)rightOpened {
+    [self.sideMenuViewController presentRightViewController];
+}
+
+- (void)leftOpened {
+    [self.sideMenuViewController presentMenuViewController];
+}
+
+- (void)receiveScrollViewPanGestureRecognizerHandle:(UIPanGestureRecognizer *)scrollViewPanGestureRecognizer {
+    [self.sideMenuViewController panGestureRecognized:scrollViewPanGestureRecognizer];
+}
+
 #pragma mark - Perprotys
 
 - (NSMutableArray *)bannerViews {
@@ -168,6 +182,9 @@
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)])
         self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"网易新闻";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftOpened)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self action:@selector(rightOpened)];
 }
 
 - (void)didReceiveMemoryWarning

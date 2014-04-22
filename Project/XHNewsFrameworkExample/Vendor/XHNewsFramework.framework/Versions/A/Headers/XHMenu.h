@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UIImage *selectedImage;
 
 @property (nonatomic, copy) NSString *dataSourcesStringUrl;
-@property (nonatomic, strong) NSArray *dataSources;
+@property (nonatomic, strong) NSMutableArray *dataSources;
 
 
 @end

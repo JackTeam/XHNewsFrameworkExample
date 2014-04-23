@@ -23,6 +23,7 @@
 @property (nonatomic, assign) CGFloat topScrollViewToolBarHieght; // default is 36
 @property (nonatomic, strong) UIImage *leftShadowImage;
 @property (nonatomic, strong) UIImage *rightShadowImage;
+@property (nonatomic, assign) BOOL isShowManagerButton; // default is NO
 
 // mid
 @property (nonatomic, strong) UIImage *midContentLogoImage; // default is netEase logo

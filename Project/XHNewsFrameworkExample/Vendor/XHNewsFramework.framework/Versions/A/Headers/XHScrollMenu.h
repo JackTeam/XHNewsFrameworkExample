@@ -55,4 +55,6 @@
 // reload dataSource
 - (void)reloadData;
 
+- (id)initWithFrame:(CGRect)frame showedManagerButton:(BOOL)showed;
+
 @end

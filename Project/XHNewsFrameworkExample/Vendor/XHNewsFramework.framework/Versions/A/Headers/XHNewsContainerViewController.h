@@ -16,6 +16,7 @@
 
 #pragma mark - Custom UI
 // top
+@property (nonatomic, assign) BOOL isShowTopScrollToolBar; // default is YES
 @property (nonatomic, strong) UIImage *topScrollViewToolBarBackgroundImage; // default is nil
 @property (nonatomic, strong) UIColor *topScrollViewToolBarBackgroundColor; // default is [UIColor colorWithWhite:0.902 alpha:1.000]
 @property (nonatomic, strong) UIImage *managerButtonBackgroundImage; // default is arrow image

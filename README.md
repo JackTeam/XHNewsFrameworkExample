@@ -1,6 +1,9 @@
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFramewrokPanGestureRecognizer.gif)
 ![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkPulDownUpRefresh.gif)
 
+## 建议
+如果您觉得这个库值得你看下去，那请不要那么急着，如看到什么不懂，或者想知道实现原理，移步看wiki的文档![XHNewsFramework文档](https://github.com/JackTeam/XHNewsFrameworkExample/wiki/XHNewsFramework%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3)
+
 ## 中文：   
 XHNewsFramework是一个快速的集成和开发框架的新闻应用程序,在仿网易新闻应App的基础上完成的框架。   
 有以下功能：             

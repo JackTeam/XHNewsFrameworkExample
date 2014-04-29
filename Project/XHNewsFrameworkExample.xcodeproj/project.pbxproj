@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74180D5D190F9C5600A35C82 /* XHDataStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74180D5C190F9C5600A35C82 /* XHDataStoreManager.m */; };
+		74180D60190F9C6700A35C82 /* XHNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74180D5F190F9C6700A35C82 /* XHNewsModel.m */; };
+		74180D67190FA6B700A35C82 /* XHNetNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74180D66190FA6B700A35C82 /* XHNetNewsCell.m */; };
 		74B7F40118F2EEBD004EE42A /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F3FC18F2EEBD004EE42A /* RECommonFunctions.m */; };
 		74B7F40218F2EEBD004EE42A /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F3FE18F2EEBD004EE42A /* RESideMenu.m */; };
 		74B7F40318F2EEBD004EE42A /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B7F40018F2EEBD004EE42A /* UIViewController+RESideMenu.m */; };
@@ -59,6 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74180D5B190F9C5600A35C82 /* XHDataStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDataStoreManager.h; sourceTree = "<group>"; };
+		74180D5C190F9C5600A35C82 /* XHDataStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDataStoreManager.m; sourceTree = "<group>"; };
+		74180D5E190F9C6700A35C82 /* XHNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNewsModel.h; sourceTree = "<group>"; };
+		74180D5F190F9C6700A35C82 /* XHNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNewsModel.m; sourceTree = "<group>"; };
+		74180D65190FA6B700A35C82 /* XHNetNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNetNewsCell.h; sourceTree = "<group>"; };
+		74180D66190FA6B700A35C82 /* XHNetNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNetNewsCell.m; sourceTree = "<group>"; };
 		74B7F3FB18F2EEBD004EE42A /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		74B7F3FC18F2EEBD004EE42A /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		74B7F3FD18F2EEBD004EE42A /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
@@ -139,6 +148,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74180D5A190F9C3600A35C82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74180D5B190F9C5600A35C82 /* XHDataStoreManager.h */,
+				74180D5C190F9C5600A35C82 /* XHDataStoreManager.m */,
+				74180D5E190F9C6700A35C82 /* XHNewsModel.h */,
+				74180D5F190F9C6700A35C82 /* XHNewsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		74B7F3FA18F2EEBD004EE42A /* RESideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +203,8 @@
 				AB4D0A4E18DD248600C7858F /* HUAJIEBannerView.m */,
 				AB4D0A4F18DD248600C7858F /* HUAJIENewsCell.h */,
 				AB4D0A5018DD248600C7858F /* HUAJIENewsCell.m */,
+				74180D65190FA6B700A35C82 /* XHNetNewsCell.h */,
+				74180D66190FA6B700A35C82 /* XHNetNewsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +268,7 @@
 			children = (
 				AB86830C18942CFE00765392 /* AppDelegate.h */,
 				AB86830D18942CFE00765392 /* AppDelegate.m */,
+				74180D5A190F9C3600A35C82 /* Models */,
 				AB4D0A3D18DD248600C7858F /* Controllers */,
 				AB4D0A4418DD248600C7858F /* Vendor */,
 				AB4D0A4C18DD248600C7858F /* Views */,
@@ -396,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74180D67190FA6B700A35C82 /* XHNetNewsCell.m in Sources */,
 				AB4D0A5118DD248600C7858F /* XHExampleLeftSideDrawerViewController.m in Sources */,
 				AB4D0A5818DD248600C7858F /* HUAJIENewsCell.m in Sources */,
 				AB4D0A5318DD248600C7858F /* XHNeteaseNewsViewController.m in Sources */,
@@ -405,7 +429,9 @@
 				AB86830A18942CFE00765392 /* main.m in Sources */,
 				AB4D0A7818DD255C00C7858F /* XHExampleRightSideDrawerViewController.m in Sources */,
 				74B7F40118F2EEBD004EE42A /* RECommonFunctions.m in Sources */,
+				74180D5D190F9C5600A35C82 /* XHDataStoreManager.m in Sources */,
 				AB4D0A5218DD248600C7858F /* XHExampleSideDrawerViewController.m in Sources */,
+				74180D60190F9C6700A35C82 /* XHNewsModel.m in Sources */,
 				74B7F40318F2EEBD004EE42A /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

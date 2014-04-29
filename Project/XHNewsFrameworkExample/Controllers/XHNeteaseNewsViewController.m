@@ -11,11 +11,10 @@
 #import <XHNewsFramework/XHNewsDetail.h>
 #import <XHNewsFramework/XHScrollBannerView.h>
 
-#import <XHNewsFramework/XHHTTPClient.h>
-#import <XHNewsFramework/XHOperationNetworkKit.h>
-
-#import "HUAJIENewsCell.h"
+#import "XHNetNewsCell.h"
 #import "HUAJIEBannerView.h"
+
+#import "XHDataStoreManager.h"
 
 @interface XHNeteaseNewsViewController () <XHContentViewRefreshingDelegate>
 
@@ -84,7 +83,7 @@
 }
 #pragma mark - Life cycle
 
-- (void)loadDataSource {
+- (void)loadLocalDataSource {
     NSMutableArray *items = [NSMutableArray new];
     NSMutableArray *unItems = [NSMutableArray new];
     int numberOfPanels = 15;
@@ -164,28 +163,36 @@
          
          self.midContentLogoImage = [UIImage imageNamed:@"logo"];
          self.contentScrollViewBackgroundColor = [UIColor colorWithRed:1.000 green:0.724 blue:0.640 alpha:1.000];
+         
+         [self loadLocalDataSource];
          */
-        
-        [self loadDataSource];
     }
 	return self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self loadNetWorkDataSource];
 }
 
-- (void)loadNetWorkDataSource {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://bbs.suizhou.com/suizhoudzapi/topiclist.php?type=tops&pageno=1&pagesize=20"]];
-    XHOperationNetworkKit *operation = [[XHOperationNetworkKit alloc] initWithRequest:request jsonSuccessHandler:^(id json) {
-        if ([[json valueForKey:@"code"] integerValue] == 200) {
-            NSLog(@"datas : %@", [json valueForKey:@"datas"]);
-        }
-    } failureHandler:^(NSData *responseData, NSURLResponse *response, NSError *error) {
-        NSLog(@"error : %@", error);
+- (void)loadNetWorkDataSource:(void (^)())compled {
+    __weak typeof(self) weakSelf = self;
+    [[XHDataStoreManager shareDataStoreManager] loadNetDataSourceWithPagesize:100 pageNumber:1 compledBlock:^(NSMutableArray *datas) {
+        XHMenu *item = [[XHMenu alloc] init];
+        NSString *title = @"头条";
+        item.title = title;
+        item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+        item.titleFont = [UIFont boldSystemFontOfSize:16];
+        
+        item.dataSources = [NSMutableArray arrayWithArray:datas];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.items = [NSArray arrayWithObject:item];
+            [weakSelf reloadDataSource];
+            if (compled) {
+                compled();
+            }
+        });
     }];
-    [[XHOperationNetworkKit queue] addOperation:operation];
 }
 
 - (void)viewDidLoad
@@ -201,6 +208,8 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStyleBordered target:self action:@selector(leftOpened)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self action:@selector(rightOpened)];
+    
+    [self loadNetWorkDataSource:NULL];
 }
 
 - (void)didReceiveMemoryWarning
@@ -212,7 +221,9 @@
 #pragma mark - contentView refreshControl delegate
 
 - (void)pullDownRefreshingAction:(XHContentView *)contentView {
-    [contentView performSelector:@selector(endPullDownRefreshing) withObject:nil afterDelay:3];
+    [self loadNetWorkDataSource:^{
+        [contentView endPullDownRefreshing];
+    }];
 }
 
 - (void)pullUpRefreshingAction:(XHContentView *)contentView {
@@ -233,10 +244,16 @@
 
 - (UITableViewCell *)contentView:(XHContentView *)contentView cellForRowAtIndexPath:(XHPageIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"cellIdentifier";
-	HUAJIENewsCell *cell = [contentView.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	XHNetNewsCell *cell = [contentView.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[HUAJIENewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[XHNetNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    XHMenu *menu = [self.items lastObject];
+    XHNewsModel *newsModel = [menu.dataSources objectAtIndex:indexPath.row];
+    
+    cell.newsModel = newsModel;
+    
+    
 	return cell;
 }
 

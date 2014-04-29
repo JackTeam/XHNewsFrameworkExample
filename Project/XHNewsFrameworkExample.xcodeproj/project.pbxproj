@@ -539,6 +539,7 @@
 				INFOPLIST_FILE = "XHNewsFrameworkExample/XHNewsFrameworkExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D46261E9-258D-44B7-AF19-26A173308B7C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -560,6 +561,7 @@
 				INFOPLIST_FILE = "XHNewsFrameworkExample/XHNewsFrameworkExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D46261E9-258D-44B7-AF19-26A173308B7C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

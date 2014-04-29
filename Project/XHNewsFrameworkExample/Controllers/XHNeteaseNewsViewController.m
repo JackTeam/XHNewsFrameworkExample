@@ -11,6 +11,9 @@
 #import <XHNewsFramework/XHNewsDetail.h>
 #import <XHNewsFramework/XHScrollBannerView.h>
 
+#import <XHNewsFramework/XHHTTPClient.h>
+#import <XHNewsFramework/XHOperationNetworkKit.h>
+
 #import "HUAJIENewsCell.h"
 #import "HUAJIEBannerView.h"
 
@@ -170,6 +173,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self loadNetWorkDataSource];
+}
+
+- (void)loadNetWorkDataSource {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://bbs.suizhou.com/suizhoudzapi/topiclist.php?type=tops&pageno=1&pagesize=20"]];
+    XHOperationNetworkKit *operation = [[XHOperationNetworkKit alloc] initWithRequest:request jsonSuccessHandler:^(id json) {
+        if ([[json valueForKey:@"code"] integerValue] == 200) {
+            NSLog(@"datas : %@", [json valueForKey:@"datas"]);
+        }
+    } failureHandler:^(NSData *responseData, NSURLResponse *response, NSError *error) {
+        NSLog(@"error : %@", error);
+    }];
+    [[XHOperationNetworkKit queue] addOperation:operation];
 }
 
 - (void)viewDidLoad

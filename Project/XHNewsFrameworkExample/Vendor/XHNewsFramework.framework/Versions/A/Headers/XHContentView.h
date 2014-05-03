@@ -40,6 +40,7 @@
 @property (nonatomic, unsafe_unretained) id <XHContentViewRefreshingDelegate> refreshControlDelegate;
 @property (nonatomic, copy) NSString *identifier;
 
+@property (nonatomic, assign) BOOL isShowTopScrollToolBar;
 @property (nonatomic, assign) BOOL pullDownRefreshed; // default is NO
 @property (nonatomic, assign) BOOL pullUpRefreshed; // default is NO
 

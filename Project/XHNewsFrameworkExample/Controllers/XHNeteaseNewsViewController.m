@@ -83,76 +83,10 @@
 }
 #pragma mark - Life cycle
 
-- (void)loadLocalDataSource {
-    NSMutableArray *items = [NSMutableArray new];
-    NSMutableArray *unItems = [NSMutableArray new];
-    int numberOfPanels = 15;
-    for (int i = 0; i < numberOfPanels; i++) {
-        XHMenu *item = [[XHMenu alloc] init];
-        NSString *title;
-        switch (i) {
-            case 0:
-                title = @"头条";
-                break;
-            case 1:
-                title = @"热点新闻";
-                break;
-            case 2:
-                title = @"原创";
-                break;
-            case 3:
-                title = @"汽车";
-                break;
-            case 4:
-                title = @"CBA";
-                break;
-            case 5:
-                title = @"NBA";
-                break;
-            case 6:
-                title = @"热点新闻";
-                break;
-            case 8:
-                title = @"房产";
-                break;
-            case 9:
-                title = @"新闻热点";
-                break;
-            default:
-                title = @"热点";
-                break;
-        }
-        item.title = title;
-        item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
-        item.titleFont = [UIFont boldSystemFontOfSize:16];
-        
-        XHMenu *unItem = [[XHMenu alloc] init];
-        unItem.title = [NSString stringWithFormat:@"Title%d", i + numberOfPanels];
-        unItem.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
-        unItem.titleFont = [UIFont boldSystemFontOfSize:16];
-        
-        NSMutableArray *rows = [NSMutableArray array];
-        int numberOfRows = 10;
-        for (int j = 0; j < numberOfRows; j++) {
-            XHNewsDetail *newsDetail = [[XHNewsDetail alloc] init];
-            newsDetail.newsTitle = @"新浪微博被收购";
-            newsDetail.newsContent = @"不知道为什么，就这样被收购了，可能是还没有发挥创新吧！";
-            [rows addObject:newsDetail];
-        }
-        item.dataSources = rows;
-        unItem.dataSources = rows;
-        
-        [items addObject:item];
-        
-        [unItems addObject:unItem];
-    }
-    self.items = items;
-    self.unItems = unItems;
-}
-
 - (id)init {
     self = [super init];
 	if (self) {
+        self.isShowTopScrollToolBar = YES;
         // custom UI
         /*
          self.topScrollViewToolBarBackgroundColor = [UIColor colorWithRed:0.362 green:0.555 blue:0.902 alpha:1.000];
@@ -163,8 +97,6 @@
          
          self.midContentLogoImage = [UIImage imageNamed:@"logo"];
          self.contentScrollViewBackgroundColor = [UIColor colorWithRed:1.000 green:0.724 blue:0.640 alpha:1.000];
-         
-         [self loadLocalDataSource];
          */
     }
 	return self;
@@ -177,16 +109,23 @@
 - (void)loadNetWorkDataSource:(void (^)())compled {
     __weak typeof(self) weakSelf = self;
     [[XHDataStoreManager shareDataStoreManager] loadNetDataSourceWithPagesize:100 pageNumber:1 compledBlock:^(NSMutableArray *datas) {
-        XHMenu *item = [[XHMenu alloc] init];
-        NSString *title = @"头条";
-        item.title = title;
-        item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
-        item.titleFont = [UIFont boldSystemFontOfSize:16];
         
-        item.dataSources = [NSMutableArray arrayWithArray:datas];
+        NSMutableArray *items = [NSMutableArray array];
+        for (NSInteger i = 0; i < 10; i ++) {
+            XHMenu *item = [[XHMenu alloc] init];
+            NSString *title = @"头条";
+            item.title = title;
+            item.titleNormalColor = [UIColor colorWithWhite:0.141 alpha:1.000];
+            item.titleFont = [UIFont boldSystemFontOfSize:16];
+            
+            item.dataSources = [NSMutableArray arrayWithArray:datas];
+            
+            [items addObject:item];
+        }
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.items = [NSArray arrayWithObject:item];
+            weakSelf.items = items;
             [weakSelf reloadDataSource];
             if (compled) {
                 compled();

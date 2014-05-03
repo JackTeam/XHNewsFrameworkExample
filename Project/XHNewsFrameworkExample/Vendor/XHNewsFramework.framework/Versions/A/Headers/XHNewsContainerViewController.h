@@ -57,6 +57,8 @@
 #pragma mark - Custom Action
 // 管理menu item的按钮事件，由你自己发挥
 - (void)didOpenManagerItems;
+// 新需求，当滚动视图停止后，告之最终显示页面的Index
+- (void)didDisplayContentViewAtCurrentPageIndex:(NSInteger)currentPageIndex;
 
 #pragma mark - 手势冲突解决
 @property (nonatomic, assign) BOOL enableSideMenu; // default is YES

@@ -17,6 +17,17 @@ XHNewsFramework是一个快速的集成和开发框架的新闻应用程序,在�
 
 后续会加入网络访问、多任务多线程管理TableView中的图片下载以及缓存        
 
+## Podfile
+
+[CocosPods](http://cocosPods.org) is the recommended method to install XHNewsFramework, just add the following line to `Podfile`
+
+```
+pod 'XHNewsFramework', '~> 0.1.0'
+```
+
+and run `pod install`, then you're all done!
+
+如果您的项目使用静态库，可能会出现的问题，请异步到[这里](https://github.com/CocoaPods/CocoaPods/issues/1)查看解决方案。
 
 ## English：    
 XHNewsFramework is a fast integration and development of the framework of news app, base on Netease App build.       

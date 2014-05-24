@@ -51,8 +51,7 @@
 
 #pragma mark - Reuse
 - (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
-- (XHContentView *)contentViewAtPage:(NSInteger)page;
-
+- (XHContentView *)contentViewForPage:(NSInteger)page;
 
 #pragma mark - Custom Action
 // 管理menu item的按钮事件，由你自己发挥

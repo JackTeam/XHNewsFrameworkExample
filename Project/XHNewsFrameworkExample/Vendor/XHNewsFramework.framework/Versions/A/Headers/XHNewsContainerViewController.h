@@ -51,7 +51,23 @@
 
 #pragma mark - Reuse
 - (XHContentView *)dequeueReusablePageWithIdentifier:(NSString*)identifier;
+/**
+ *  这个方法用于重载的，这个方法类似TableView的用法
+ *
+ *  @param page 配置的页码
+ *
+ *  @return 返回初始化或者重用的contentView
+ */
 - (XHContentView *)contentViewForPage:(NSInteger)page;
+
+/**
+ *  用于直接调用的方法，获取某个页码的contentView
+ *
+ *  @param page 目标页码
+ *
+ *  @return 返回某个页码对于的contentView
+ */
+- (XHContentView *)contentViewAtPage:(NSInteger)page;
 
 #pragma mark - Custom Action
 // 管理menu item的按钮事件，由你自己发挥

@@ -44,12 +44,7 @@ Subsequent will join network access, multitasking, multithreading management the
 
 请移步到开源所有代码：[XHNewsFramework](https://github.com/JackTeam/XHNewsFramework)      
 
-## open source model
-1, here is the SDK mode    
-2, as long as pay attention to the component of a total of more than 700 users, will with all open source code model.   
-
 Please click to all open source code: [XHNewsFramework](https://github.com/JackTeam/XHNewsFramework)     
-
 
 ## License
 

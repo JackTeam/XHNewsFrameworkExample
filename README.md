@@ -41,9 +41,6 @@ Has the following features:
 7、a complete and independent news frame, a revolutionary UI interaction experience.      
        
 Subsequent will join network access, multitasking, multithreading management the TableView pictures download and cache              
-## 开源模式     
-1、这里已经是SDK模式了      
-2、只要关注该组件的用户数量达到700个以上，将以开源所有代码的模式。    
 
 请移步到开源所有代码：[XHNewsFramework](https://github.com/JackTeam/XHNewsFramework)      
 
